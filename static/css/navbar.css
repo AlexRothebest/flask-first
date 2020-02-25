@@ -1,0 +1,50 @@
+nav {
+	position: sticky;
+	margin-bottom: 30px;
+}
+
+
+nav ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	overflow: hidden;
+	background: linear-gradient(#999966, #adad85 60%, transparent);
+}
+
+
+nav ul div li {
+	display: inline;
+}
+
+
+nav ul div li a {
+	display: inline-block;
+	padding: 15px 15px 30px 15px;
+	color: black;
+	font-size: 1.2em;
+	transition: color 0.3s, box-shadow 0.3s;
+}
+
+
+nav ul div li a:hover {
+	color: #cc0000;
+	text-shadow: 0 0 0px #cc0000;
+	box-shadow:
+		inset 0 23px 15px -20px #cc0000,
+		inset 15px 0 15px -20px transparent,
+		inset -15px 0 15px -20px transparent;
+}
+
+
+nav ul div li a:before {
+	display: block;
+}
+
+nav ul div.nav-left li {
+	float: left;
+}
+
+nav ul div.nav-right li {
+	float: right;
+}

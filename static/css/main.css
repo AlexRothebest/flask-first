@@ -1,0 +1,10 @@
+body {
+	margin: 0;
+
+	background: linen;
+}
+
+
+a[href] {
+	text-decoration: none;
+}
