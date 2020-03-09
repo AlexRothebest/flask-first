@@ -5,7 +5,12 @@
 			<li><a href = '/tournaments'>Tournaments</a></li>
 		</div>
 		<div class = 'nav-right'>
-			<li><a href='/login'>Login</a></li>
+			{% if current_user.is_authenticated %}
+				<li><a href=/logout>Logout ({{ current_user.username }})</a></li>
+			{% else %}
+				<li><a href='/login'>Login</a></li>
+				<li><a href='/sign-up'>Sign Up</a></li>
+			{% endif %}
 		</div>
 	</ul>
 </nav>

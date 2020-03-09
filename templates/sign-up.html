@@ -9,7 +9,7 @@
 
 		<link rel='stylesheet' type='text/css' href='/static/css/main.css'>
 		<link rel='stylesheet' type='text/css' href='/static/css/navbar.css'>
-		<link rel='stylesheet' type='text/css' href='/static/css/login.css'>
+		<link rel='stylesheet' type='text/css' href='/static/css/sign-up.css'>
 		<link rel='stylesheet' type='text/css' href='/static/css/form.css'>
 
 
@@ -17,27 +17,32 @@
 
 
 		<script type='text/javascript' src='/static/js/form.js'></script>
+		<script type='text/javascript' src='/static/js/sign-up.js'></script>
 	</head>
 	<body>
 		{% include 'includes/navbar.html' %}
 
 
 		<section>
-			<form method='POST' action=''>
+			<form id='sign-up-form' method='POST' action=''>
 				<fieldset>
-					<legend>Login</legend>
+					<legend>Sign Up</legend>
 
-					<small>Username or Email</small>
-					<input type='text' name='username' placeholder='Username or Email'>
+					<small>Username</small>
+					<input type='text' name='username' placeholder='Username' required>
+
+					<small>Email</small>
+					<input type='email' name='email' placeholder='Email' required>
 
 					<small>Password</small>
-					<input type='password' name='password' placeholder='Password' class='password-field'>
+					<input type='password' name='password' placeholder='Password' class='password-field' required>
 					<i class='fa fa-eye-slash'></i>
 
-					<input type='checkbox' name='remember-me' id='remember-me' value='remember-me' checked>
-					<label for='remember-me'>Remember me</label>
+					<small>Confirm password</small>
+					<input type='password' name='confirm-password' placeholder='Confirm password' class='password-field' required>
+					<i class='fa fa-eye-slash'></i>
 
-					<input type='submit' name='submit' value='Login'>
+					<label class='submit-btn'>Sign Up</label>
 				</fieldset>
 			</form>
 		</section>
