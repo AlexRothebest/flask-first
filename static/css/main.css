@@ -4,6 +4,10 @@ body {
 	background: linen;
 }
 
+body > section {
+	margin: 0 16.2%;
+}
+
 
 a[href] {
 	text-decoration: none;

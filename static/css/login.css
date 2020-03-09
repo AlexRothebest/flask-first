@@ -1,0 +1,86 @@
+nav a[href='/login'] {
+	color: blue;
+	text-shadow: 0 0 3px blue;
+}
+
+
+small {
+	display: block;
+}
+
+
+fieldset {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+
+	border: none;
+}
+
+
+fieldset > legend {
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+
+	font-size: 2em;
+
+	margin-bottom: 18px;
+}
+
+
+fieldset > input[type='text'],
+fieldset > input[type='password'] {
+	height: 25px;
+	width: 250px;
+
+	border: 1px solid black;
+	border-radius: 5px;
+
+	margin-bottom: 20px;
+
+	padding: 3px 12px;
+
+	display: block;
+
+	outline: none;
+}
+
+fieldset > input[type='checkbox'],
+label[for='remember-me'] {
+	cursor: pointer;
+
+	outline: none;
+}
+
+fieldset > input[type='submit'] {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+
+	display: block;
+
+	margin-top: 20px;
+
+	padding: 10px 20px;
+
+	background: transparent;
+
+	border: 1px solid black;
+	border-radius: 5px;
+
+	color: black;
+
+	transition: 0.3s;
+
+	cursor: pointer;
+
+	outline: none;
+}
+fieldset > input[type='submit']:hover {
+	background: black;
+
+	border: 1px solid transparent;
+
+ 	color: white;
+}

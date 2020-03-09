@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Home</title>
+
+
+		<link rel='stylesheet' type='text/css' href='/static/css/main.css'>
+		<link rel='stylesheet' type='text/css' href='/static/css/navbar.css'>
+		<link rel='stylesheet' type='text/css' href='/static/css/login.css'>
+	</head>
+	<body>
+		{% include 'includes/navbar.html' %}
+
+
+		<section>
+			<form method='POST' action=''>
+				<fieldset>
+					<legend>Login</legend>
+
+					<small>Username or Email</small>
+					<input type='text' name='username' placeholder='Username or Email'>
+
+					<small>Password</small>
+					<input type='password' name='password' placeholder='Password'>
+
+					<input type='checkbox' name='remember-me' id='remember-me' value='remember-me'>
+					<label for='remember-me'>Remember me</label>
+
+					<input type='submit' name='submit' value='Login'>
+			</form>
+		</section>
+	</body>
+</html>

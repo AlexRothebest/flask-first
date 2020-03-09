@@ -1,4 +1,4 @@
-nav a[href='/'] {
+nav a[href='/tournaments'] {
 	color: blue;
 	text-shadow: 0 0 3px blue;
 }
