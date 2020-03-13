@@ -1,12 +1,9 @@
 from flask import render_template, request, redirect
 from flask_login import LoginManager, login_user, logout_user, current_user
 
-from main import app, db
+from main import app, db, bcrypt, login_manager
 from main.models import User
 
-
-login_manager = LoginManager()
-login_manager.init_app(app)
 
 @login_manager.user_loader
 def load_user(user_id):
@@ -34,7 +31,7 @@ def login():
 
 		user = User.query.filter_by(username=username).first()
 
-		if user is not None and user.password == password:
+		if user is not None and bcrypt.check_password_hash(user.password, password):
 			login_user(user, remember=remember)
 
 
@@ -63,11 +60,11 @@ def sign_up():
 		print(f'\n\n{username} just registered\nE-mail:{email}\nPassword "{password}"\n\n')
 
 
-		if len(User.query.filter_by(username=request.form.get('username')).all()) == 0:
+		if len(User.query.filter_by(username=username).all()) == 0 and len(User.query.filter_by(email=email).all()) == 0:
 			new_user = User(
 				username=username,
 				email=email,
-				password=password
+				password=bcrypt.generate_password_hash(password).decode('UTF-8')
 			)
 			
 			db.session.add(new_user)
@@ -75,7 +72,7 @@ def sign_up():
 			db.session.commit()
 
 
-			login_user(new_user)
+			login_user(new_user, remember=True)
 
 
 		return redirect('/')
