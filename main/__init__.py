@@ -29,3 +29,9 @@ bcrypt = Bcrypt(app)
 from main.admin import *
 
 from main.routes import *
+
+
+from api import api
+
+
+app.register_blueprint(api, url_prefix='/api')

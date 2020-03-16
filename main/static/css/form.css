@@ -56,17 +56,18 @@ fieldset > label[for='remember-me'] {
 	outline: none;
 }
 
-fieldset > input[type='submit'],
-fieldset > label.submit-btn {
+fieldset > button,
+fieldset > input[type='submit'] {
 	position: absolute;
 	left: 50%;
 	transform: translateX(-50%);
 
 	display: block;
 
-	margin-top: 20px;
+	width: 90px;
+	height: 40px;
 
-	padding: 10px 20px;
+	margin-top: 20px;
 
 	background: transparent;
 
@@ -75,19 +76,28 @@ fieldset > label.submit-btn {
 
 	color: black;
 
-	transition: 0.3s;
+	transition: background-color 0.3s, color 0.3s;
 
 	cursor: pointer;
 
 	outline: none;
 }
 fieldset > input[type='submit']:hover,
+fieldset > button:hover,
 fieldset > label.submit-btn:hover {
 	background: black;
 
-	border: 1px solid transparent;
-
  	color: white;
+}
+
+
+fieldset > button > a {
+	display: inline-block;
+}
+
+
+fieldset > button > i {
+	margin-left: 7px;
 }
 
 

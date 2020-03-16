@@ -1,5 +1,5 @@
 from flask import render_template, request, redirect
-from flask_login import LoginManager, login_user, logout_user, current_user
+from flask_login import login_user, logout_user, current_user
 
 from main import app, db, bcrypt, login_manager
 from main.models import User
@@ -23,29 +23,6 @@ def tournaments():
 
 @app.route('/login/', methods=['GET', 'POST'])
 def login():
-	if len(request.form) != 0:
-		username = request.form.get('username')
-		password = request.form.get('password')
-		remember = request.form.get('remember-me') == 'remember-me'
-
-
-		user = User.query.filter_by(username=username).first()
-
-		if user is not None and bcrypt.check_password_hash(user.password, password):
-			login_user(user, remember=remember)
-
-
-			print(f'\n\n{username} just logged in with password "{password}"')
-
-			if remember:
-				print('Remember this user!\n\n')
-			else:
-				print('Do not remember this user!\n\n')
-
-
-		return redirect('/')
-
-
 	return render_template('login.html')
 
 

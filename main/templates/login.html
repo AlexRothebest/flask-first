@@ -17,14 +17,15 @@
 
 
 		<script type='text/javascript' src='/static/js/form.js'></script>
+		<script type='text/javascript' src='/static/js/login.js'></script>
 	</head>
 	<body>
 		{% include 'includes/navbar.html' %}
 
 
 		<section>
-			<form method='POST' action=''>
-				<fieldset>
+			<!--form method='POST' action=''-->
+				<fieldset class='login-form'>
 					<legend>Login</legend>
 
 					<small>Username or Email</small>
@@ -37,9 +38,15 @@
 					<input type='checkbox' name='remember-me' id='remember-me' value='remember-me' checked>
 					<label for='remember-me'>Remember me</label>
 
-					<input type='submit' name='submit' value='Login'>
+					<button>
+						<a>Login</a>
+						<i class='fas fa-spinner fa-spin' style='display: none;'></i>
+					</button>
+
+					<!--input type='submit' name='submit' value='Login'>
+					<i class="fas fa-spinner fa-spin"></i-->
 				</fieldset>
-			</form>
+			<!--/form-->
 		</section>
 	</body>
 </html>
